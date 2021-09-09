@@ -7,8 +7,8 @@ import { ReactComponent as Star } from './../icons/star.svg';
 export default function Rate({ value = 0 }) {
   const stars = useMemo(
     () =>
-      Array.from(Array(value).keys()).map(() => (
-        <Star className={style.star}></Star>
+      Array.from(Array(value).keys()).map((index) => (
+        <Star key={index} className={style.star}></Star>
       )),
     [value]
   );
