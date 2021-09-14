@@ -1,6 +1,6 @@
 import { DECREMENT, INCREMENT } from '../constants';
 
-// { [productId]: amount}
+// { [productId]: amount }
 export default function (state = {}, action) {
   const { type, id } = action;
   switch (type) {
