@@ -3,4 +3,5 @@ import order from './order';
 
 export default combineReducers({
   order,
+  foo: () => 'bar',
 });
