@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import counter from '../../hocs/counter';
 import styles from './product.module.css';
 import Button from '../button';
@@ -40,10 +39,12 @@ function Product({ product, amount, decrement, increment, fetchData }) {
 
 Product.propTypes = {
   product: PropTypes.shape({
-    ingredients: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     name: PropTypes.string,
     price: PropTypes.number,
+    ingredients: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   }).isRequired,
+  fetchData: PropTypes.func,
+  // from HOC counter
   amount: PropTypes.number,
   increment: PropTypes.func,
   decrement: PropTypes.func,
