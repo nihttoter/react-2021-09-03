@@ -16,6 +16,7 @@ import {
 import { createOrder } from '../../redux/actions';
 
 import { UserConsumer } from '../../contexts/user-context';
+import { useMoney } from '../../hooks/use-money';
 
 function Basket({
   title = 'Basket',
@@ -24,6 +25,7 @@ function Basket({
   createOrder,
   loading,
 }) {
+  const m = useMoney();
   if (!total) {
     return (
       <div className={styles.basket}>
@@ -60,7 +62,7 @@ function Basket({
           <p>Total</p>
         </div>
         <div className={itemStyles.info}>
-          <p>{`${total} $`}</p>
+          <p>{m(total)}</p>
         </div>
       </div>
       <Switch>
